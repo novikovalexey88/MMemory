@@ -10,11 +10,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mmemory.models.BoardSize
 import kotlin.math.min
 
-class ImagePickerrAdapter(private val context: Context,
-                          private val imageUris: List<Uri>,
-                          private val boardSize: BoardSize
+class ImagePickerrAdapter(
+    private val context: Context,
+    private val imageUris: List<Uri>,
+    private val boardSize: BoardSize,
+    private val imageClickListener: ImageClickListener
 ) : RecyclerView.Adapter<ImagePickerrAdapter.ViewHolder>() {
 
+    interface ImageClickListener {
+        fun onPlaceholderClicker()
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -53,6 +58,7 @@ class ImagePickerrAdapter(private val context: Context,
         fun bind() {
             ivCustomImage.setOnClickListener {
 
+                imageClickListener.onPlaceholderClicker()
             }
         }
 
