@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
